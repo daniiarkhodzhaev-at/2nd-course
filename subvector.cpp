@@ -116,4 +116,3 @@ void subvector::destructor(subvector* qv) {
     capacity = qv->capacity;
     delete[] qv->mas;
 }
-
