@@ -1,28 +1,30 @@
 //
 // Created by Mercurius on 11.09.2021.
+// Edited by Daniiarkhodzhaev A.T
 //
 
 #ifndef INC_2ND_COURSE_SUBVECTOR_H
 #define INC_2ND_COURSE_SUBVECTOR_H
 
-#include <iostream>
-using namespace std;
-
-
 class Subvector {
 private:
     int* mas;
-    unsigned int top;
-    unsigned int capacity;
+    unsigned top;
+    unsigned capacity;
 
 public:
     Subvector();
 
 
-    bool resize(unsigned int new_capacity);
+    ~Subvector();
 
 
-    bool push_back(int d);
+    /** Dangerous function: uninitialized values! (FIXME)
+     */
+    bool resize(unsigned new_capacity);
+
+
+    bool push_back(int data);
 
 
     int pop_back();
@@ -34,10 +36,13 @@ public:
     void shrink_to_fit();
 
 
-    int get_el(int n);
+    int get_el(unsigned position);
 
 
-    void destructor();
+    void set_el(unsigned position, int data);
+
+
+    unsigned size();
 };
 
 

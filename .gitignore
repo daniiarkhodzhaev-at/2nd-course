@@ -1,0 +1,11 @@
+# build data
+build/*
+
+# executables
+main
+
+# lib
+libSubvector.so
+
+# obj
+*.o
