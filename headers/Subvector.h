@@ -19,7 +19,7 @@ public:
     ~Subvector();
 
 
-    /** Dangerous function: uninitialized values! (FIXME)
+    /** Dangerous function: uninitialized values!
      */
     bool resize(unsigned new_capacity);
 

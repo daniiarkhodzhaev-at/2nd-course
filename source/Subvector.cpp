@@ -3,7 +3,10 @@
 // Edited by Daniiarkhodzhaev A.T.
 //
 
-#include "../headers/Subvector.h"
+#include <climits>
+
+
+#include <Subvector.h>
 
 
 Subvector::Subvector() {
@@ -59,29 +62,22 @@ bool Subvector::push_back(int d) {
 }
 
 int Subvector::pop_back() {
-    int* sub;
     int pop;
 
-    sub = mas;
     if (top > 0) {
         top -= 1;
-        pop = *(sub + top - 1);
-        *(sub + top - 1) = 0;
-        return (pop);
+        pop = *(mas + top - 1);
+        return pop;
     } else {
-        return (1);
+        return INT_MAX;
     }
 }
 
 void Subvector::clear() {
-    int* sub;
-    unsigned i;
-
-    sub = mas;
     top = 0;
-    for (i = 0; i < top; ++i) {
-        *(sub + i) = 0;
-    }
+    capacity = 0;
+    delete[] mas;
+    mas = nullptr;
 }
 
 void Subvector::shrink_to_fit() {
